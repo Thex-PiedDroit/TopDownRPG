@@ -89,6 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1594360731067585706}
   - component: {fileID: 1594360731067585708}
+  - component: {fileID: 8637760380907504830}
   - component: {fileID: 1594360731067585707}
   - component: {fileID: 8274728538052355388}
   - component: {fileID: 1594360731067585709}
@@ -129,8 +130,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_iInputsProxy: {fileID: 11400000, guid: e72c811acbf71984b9335bb2a7dc4fed, type: 2}
+  m_pWeaponsHandler: {fileID: 8637760380907504830}
   m_pRigidBody: {fileID: 1594360731067585711}
   m_fMoveSpeed: 5
+--- !u!114 &8637760380907504830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594360731067585704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0145d9b2573480946b3a281dae83b7b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_pAnimator: {fileID: 8274728538052355388}
 --- !u!212 &1594360731067585707
 SpriteRenderer:
   m_ObjectHideFlags: 0

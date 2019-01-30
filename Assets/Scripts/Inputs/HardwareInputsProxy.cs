@@ -23,6 +23,19 @@ public class HardwareInputsProxy : InputsProxy
 		pReceiver.HandleMouseWorldPos(GameManager.Instance.CurrentCamera.ScreenToWorldPoint(Input.mousePosition).SetZ(0.0f));
 	}
 
+	protected override void CatchMouseButtonInput(IInputsReceiver pReceiver)
+	{
+		for (int i = 0; i < 3; ++i)
+		{
+			if (Input.GetMouseButtonDown(i))
+				pReceiver.HandleMouseButtonInput(i, EInputAction.DOWN);
+			else if (Input.GetMouseButtonDown(i))
+				pReceiver.HandleMouseButtonInput(i, EInputAction.HELD);
+			else if (Input.GetMouseButtonDown(i))
+				pReceiver.HandleMouseButtonInput(i, EInputAction.UP);
+		}
+	}
+
 	override protected void CatchDirectionInputs(IInputsReceiver pReceiver)
 	{
 		float fHorizontal = Input.GetAxis("Horizontal");

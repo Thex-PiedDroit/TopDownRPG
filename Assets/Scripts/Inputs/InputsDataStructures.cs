@@ -34,6 +34,7 @@ public interface IInputsReceiver
 	List<string> GetButtonsToCheck();
 
 	void HandleMouseWorldPos(Vector3 tPosition);
+	void HandleMouseButtonInput(int iButtonNumber, EInputAction eInputAction);
 	void HandleDirectionInputNotNormalized(Vector2 tDirection);
 	void HandleExtraAxisInput(string sAxisName, float fAxis);
 	void HandleButtonInput(string sButtonName, EInputAction eInputAction);

@@ -8,6 +8,8 @@ public class Character : MonoBehaviour, ICharacter, IInputsReceiver
 
 	public InputsProxy m_iInputsProxy = null;
 
+	public WeaponsHandler m_pWeaponsHandler = null;
+
 	public Rigidbody2D m_pRigidBody = null;
 
 	public float m_fMoveSpeed = 0.0f;
@@ -77,6 +79,24 @@ public class Character : MonoBehaviour, ICharacter, IInputsReceiver
 	public void HandleMouseWorldPos(Vector3 tPosition)
 	{
 		LookAt(tPosition);
+	}
+
+	public void HandleMouseButtonInput(int iButtonNumber, EInputAction eInputAction)
+	{
+		if (eInputAction != EInputAction.DOWN)
+			return;
+
+		switch (iButtonNumber)
+		{
+			case 0:
+				m_pWeaponsHandler.TryTriggerAttack(true, EAttackDirection.FORWARD);
+				break;
+			case 1:
+				m_pWeaponsHandler.TryTriggerAttack(false, EAttackDirection.FORWARD);
+				break;
+			case 2:
+				break;
+		}
 	}
 
 	public void HandleDirectionInputNotNormalized(Vector2 tDirection)

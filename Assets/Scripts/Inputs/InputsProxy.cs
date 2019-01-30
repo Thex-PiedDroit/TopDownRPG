@@ -32,6 +32,7 @@ abstract public class InputsProxy : ScriptableObject
 		CacheReceiver(pReceiver);
 
 		CatchMouseWorldPositionInput(pReceiver);
+		CatchMouseButtonInput(pReceiver);
 		CatchDirectionInputs(pReceiver);
 		CatchExtraAxisInputs(pReceiver);
 		CatchButtonsInputs(pReceiver);
@@ -48,6 +49,7 @@ abstract public class InputsProxy : ScriptableObject
 	}
 
 	abstract protected void CatchMouseWorldPositionInput(IInputsReceiver pReceiver);
+	abstract protected void CatchMouseButtonInput(IInputsReceiver pReceiver);
 	abstract protected void CatchDirectionInputs(IInputsReceiver pReceiver);
 	abstract protected void CatchExtraAxisInputs(IInputsReceiver pReceiver);
 	abstract protected void CatchButtonsInputs(IInputsReceiver pReceiver);
